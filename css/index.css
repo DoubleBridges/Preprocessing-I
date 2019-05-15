@@ -149,6 +149,7 @@ h3,
 h4,
 h5 {
   font-size: 2rem;
+  font-family: 'Bree Serif', serif;
 }
 img {
   width: 100%;
@@ -158,11 +159,14 @@ p {
   line-height: 1.25;
   margin: 20px 0;
   font-size: 1.8rem;
+  font-family: 'Cinzel', serif;
 }
 .container {
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
   font-size: 1.6rem;
+  padding: 0 3rem;
 }
 .navigation {
   display: flex;
@@ -170,13 +174,25 @@ p {
   margin: 2rem 0;
 }
 .navigation a:link {
-  color: black;
+  color: #3d3632;
   text-decoration: none;
   margin: 0 2rem;
   font-size: 2rem;
 }
 .navigation a:last-child {
   margin-right: 0;
+}
+@media screen and (max-width: 500px) {
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  .navigation a:link {
+    margin: 0;
+  }
 }
 .billboard {
   display: flex;
@@ -189,9 +205,18 @@ p {
 .billboard img {
   width: 40%;
 }
+@media screen and (max-width: 500px) {
+  .billboard img {
+    width: 100%;
+  }
+}
 .billboard h1 {
   font-size: 4rem;
   margin: 1rem 0;
+}
+.billboard h2 {
+  margin-bottom: 1.2rem;
+  font-size: 3rem;
 }
 .billboard h4 {
   width: 100%;
@@ -207,19 +232,53 @@ p {
   border-radius: 0.8rem;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+@media screen and (max-width: 500px) {
+  .billboard button {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .billboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
 .main-content {
   display: flex;
   justify-content: space-between;
   margin: 3rem 0;
 }
+@media screen and (max-width: 630px) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
 .main-content .about-me {
   width: 45%;
+}
+@media screen and (max-width: 630px) {
+  .main-content .about-me {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .main-content .about-me h2 {
   font-size: 3.2rem;
 }
 .main-content .skills-list {
   width: 45%;
+}
+@media screen and (max-width: 630px) {
+  .main-content .skills-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .main-content .skills-list h3 {
   font-size: 2.8rem;
