@@ -4,56 +4,272 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin        : 0;
+	padding       : 0;
+	border        : 0;
+	font-size     : 100%;
+	font          : inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing : 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
 }
 
+// Start of my styling
+
+html {
+	box-sizing: border-box;
+	font-size : 62.5%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-size: 2rem;
+}
+
+img {
+	width : 100%;
+	height: auto;
+}
+
+p {
+	line-height: 1.25;
+	margin     : 20px 0;
+	font-size  : 1.8rem;
+}
+
+strong {
+	font-weight: bold;
+	color      : red;
+}
+
+.container {
+	max-width: 900px;
+	margin   : 0 auto;
+	font-size: 1.6rem;
+}
+
+.navigation {
+	display        : flex;
+	justify-content: flex-end;
+	margin         : 2rem 0;
+
+	a:link {
+		color          : black;
+		text-decoration: none;
+		margin         : 0 2rem;
+		font-size      : 2rem;
+	}
+
+	a:last-child {
+		margin-right: 0;
+	}
+}
+
+.billboard {
+	display        : flex;
+	flex-direction : column;
+	justify-content: space-around;
+	align-items    : flex-start;
+	padding        : 4rem 2rem;
+	background     : #D8CECC;
+
+	img {
+		width: 40%;
+	}
+
+	h1 {
+		font-size: 4rem;
+		margin   : 1rem 0;
+	}
+
+	h4 {
+		width         : 100%;
+		padding-bottom: 1.8rem;
+		border-bottom : .1rem solid #ada9a7;
+	}
+
+	button {
+		width        : 15rem;
+		height       : 5rem;
+		color        : white;
+		background   : #5e5550;
+		font-size    : 1.8rem;
+		border-radius: .8rem;
+		box-shadow   : 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+}
+
+.main-content {
+	display        : flex;
+	justify-content: space-between;
+	margin         : 3rem 0;
+
+	.about-me {
+		width: 45%;
+
+		h2 {
+			font-size: 3.2rem;
+		}
+	}
+
+	.skills-list {
+		width: 45%;
+
+		h3 {
+			font-size: 2.8rem;
+		}
+
+		.skills {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			li {
+				border: .1rem solid #ada9a7;
+				height: 6.4rem;
+				
+			}
+		}
+	}
+}
