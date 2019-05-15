@@ -159,10 +159,6 @@ p {
   margin: 20px 0;
   font-size: 1.8rem;
 }
-strong {
-  font-weight: bold;
-  color: red;
-}
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -227,6 +223,7 @@ strong {
 }
 .main-content .skills-list h3 {
   font-size: 2.8rem;
+  margin-bottom: 0.5rem;
 }
 .main-content .skills-list .skills {
   width: 100%;
@@ -236,5 +233,47 @@ strong {
 }
 .main-content .skills-list .skills li {
   border: 0.1rem solid #ada9a7;
-  height: 6.4rem;
+  border-collapse: collapse;
+  height: 6rem;
+  padding: 2.2rem;
+}
+.work-history h3 {
+  font-size: 2.8rem;
+}
+.work-history table,
+.work-history th,
+.work-history td {
+  border-top: 1px solid #ada9a7;
+  border-collapse: collapse;
+}
+.work-history table th,
+.work-history th th,
+.work-history td th,
+.work-history table td,
+.work-history th td,
+.work-history td td {
+  text-align: left;
+  padding: 0.7rem;
+}
+.work-history table tr,
+.work-history th tr,
+.work-history td tr {
+  height: 3rem;
+}
+.work-history table tr:nth-child(even),
+.work-history th tr:nth-child(even),
+.work-history td tr:nth-child(even) {
+  background-color: #ebe5e4;
+}
+footer {
+  background: #5e5550;
+  color: white;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+footer .copyright {
+  font-size: 1.6rem;
 }
