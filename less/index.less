@@ -4,56 +4,385 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin        : 0;
+	padding       : 0;
+	border        : 0;
+	font-size     : 100%;
+	font          : inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing : 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
 }
 
+
+
+// Mixins
+
+.centerItAll() {
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	margin         : 0 auto;
+}
+
+.singleColumn() {
+	display       : flex;
+	flex-direction: column;
+	width         : 100%;
+}
+
+// Variables
+
+@backgroundColor: #D8CECC;
+@secondaryColor : #5e5550;
+@borderColor    : #ada9a7;
+@fontColor      : #3d3632;
+@hFonts         : 'Bree Serif', serif;
+@pFonts         : 'Cinzel', serif;
+
+// Start of my styling
+
+html {
+	box-sizing: border-box;
+	font-size : 62.5%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-size  : 2rem;
+	font-family: @hFonts;
+}
+
+img {
+	width : 100%;
+	height: auto;
+}
+
+p {
+	line-height: 1.25;
+	margin     : 20px 0;
+	font-size  : 1.8rem;
+	font-family: @pFonts;
+}
+
+.container {
+	width    : 100%;
+	max-width: 900px;
+	margin   : 0 auto;
+	font-size: 1.6rem;
+	padding  : 0 3rem;
+}
+
+.navigation {
+	display        : flex;
+	justify-content: flex-end;
+	margin         : 2rem 0;
+
+	a:link {
+		color          : @fontColor;
+		text-decoration: none;
+		margin         : 0 2rem;
+		font-size      : 2rem;
+	}
+
+	a:last-child {
+		margin-right: 0;
+	}
+
+	@media screen and (max-width:500px) {
+		.centerItAll();
+		justify-content: space-between;
+
+		a:link {
+			margin: 0;
+		}
+
+
+	}
+}
+
+.billboard {
+	display        : flex;
+	flex-direction : column;
+	justify-content: space-around;
+	align-items    : flex-start;
+	padding        : 4rem 2rem;
+	background     : @backgroundColor;
+
+	img {
+		width: 40%;
+
+		@media screen and (max-width:500px) {
+			width: 100%;
+		}
+	}
+
+	h1 {
+		font-size: 4rem;
+		margin   : 1rem 0;
+	}
+
+	h2 {
+		margin-bottom: 1.2rem;
+		font-size    : 3rem;
+	}
+
+	h4 {
+		width         : 100%;
+		padding-bottom: 1.8rem;
+		border-bottom : .1rem solid @borderColor;
+	}
+
+	button {
+		width        : 15rem;
+		height       : 5rem;
+		color        : white;
+		background   : @secondaryColor;
+		font-size    : 1.8rem;
+		border-radius: .8rem;
+		box-shadow   : 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+		@media screen and (max-width:500px) {
+			width: 80%;
+		}
+	}
+
+	@media screen and (max-width:500px) {
+		.centerItAll();
+	}
+
+}
+
+.main-content {
+	display        : flex;
+	justify-content: space-between;
+	margin         : 3rem 0;
+
+	@media screen and (max-width:630px) {
+		.singleColumn();
+	}
+
+	.about-me {
+		width: 45%;
+
+		@media screen and (max-width:630px) {
+			.singleColumn();
+		}
+
+		h2 {
+			font-size: 3.2rem;
+		}
+	}
+
+	.skills-list {
+		width: 45%;
+
+		@media screen and (max-width:630px) {
+			.singleColumn();
+		}
+
+		h3 {
+			font-size    : 2.8rem;
+			margin-bottom: .5rem;
+		}
+
+		.skills {
+			width          : 100%;
+			display        : flex;
+			flex-direction : column;
+			justify-content: center;
+
+			li {
+				border         : .1rem solid @borderColor;
+				border-collapse: collapse;
+				height         : 6rem;
+				padding        : 2.2rem;
+
+			}
+		}
+	}
+}
+
+.work-history {
+
+	h3 {
+		font-size: 2.8rem;
+	}
+
+	table,
+	th,
+	td {
+		border-top     : 1px solid @borderColor;
+		border-collapse: collapse;
+
+
+		th,
+		td {
+			text-align: left;
+			padding   : .7rem;
+		}
+
+		tr {
+			height: 3rem;
+		}
+
+		tr:nth-child(even) {
+			background-color: #ebe5e4;
+		}
+	}
+}
+
+footer {
+	background     : @secondaryColor;
+	color          : white;
+	height         : 6rem;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	margin         : 3rem 0;
+
+	.copyright {
+		font-size: 1.6rem;
+	}
+
+}
